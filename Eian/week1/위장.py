@@ -6,7 +6,7 @@ from collections import Counter
 
 def solution(clothes):
     answer = 1
-    closet = Counter(ctype for name, ctype in clothes)
+    closet = Counter(ctype for _, ctype in clothes)
 
     for number in closet.values():
         answer *= (number + 1)
