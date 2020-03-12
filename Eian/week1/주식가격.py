@@ -9,7 +9,7 @@ def solution(prices):
     for i in range(N):
         while stack and prices[stack[-1]] > prices[i]:
             close = stack.pop()
-            ticker[close] = i - head
+            ticker[close] = i - close
         stack.append(i)
     
     while stack:
