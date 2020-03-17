@@ -1,7 +1,14 @@
 from collections import deque
 
+"""
+f_i = from_index
+f_c = from_computer
+t_i = to_index
+is_conn = is_connected
+s_i = start_index
+"""
 def solution(n, computers):
-    computers = [[t_i for t_i, is_connected in enumerate(f_c) if is_connected and f_i != t_i] for f_i, f_c in enumerate(computers)]
+    computers = [[t_i for t_i, is_conn in enumerate(f_c) if is_conn and f_i != t_i] for f_i, f_c in enumerate(computers)]
 
     answer = 0
     visited = [False]*n
