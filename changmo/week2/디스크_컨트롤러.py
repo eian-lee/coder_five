@@ -19,12 +19,8 @@ def solution(jobs):
             start, duration = jobs.popleft()
             heapq.heappush(wait_jobs, (duration, start))
         
-        if wait_jobs:
-            duration, start = heapq.heappop(wait_jobs)
-            time += duration
-        elif jobs:
-            start, duration = jobs.popleft
-            time = start + duration
+        duration, start = heapq.heappop(wait_jobs)
+        time += duration
 
         answer += (time - start)
     
