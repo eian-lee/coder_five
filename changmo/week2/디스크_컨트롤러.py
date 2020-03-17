@@ -9,7 +9,7 @@ def solution(jobs):
     jobs = deque(jobs)
     
     wait_jobs = []
-    time = jobs[0][0]
+    time = jobs[0][REQUEST_TIME]
     
     while jobs or wait_jobs:
         if not wait_jobs and jobs and time < jobs[0][REQUEST_TIME]:
