@@ -16,6 +16,17 @@ def is_prime(n):
 
 
 def solution(numbers):
+    """
+    테스트 1 〉 통과 (0.11ms, 10.9MB)
+    테스트 2 〉 통과 (2.60ms, 11MB)
+    테스트 3 〉 통과 (0.06ms, 10.9MB)
+    테스트 4 〉 통과 (1.14ms, 10.9MB)
+    테스트 5 〉 통과 (8.57ms, 11MB)
+    테스트 6 〉 통과 (0.06ms, 10.9MB)
+    테스트 7 〉 통과 (0.11ms, 10.8MB)
+    테스트 8 〉 통과 (8.69ms, 10.9MB)
+    테스트 9 〉 통과 (0.10ms, 10.9MB)
+    """
     nums = set()
     for permuation in permutations(numbers):
         string = ""
