@@ -25,6 +25,6 @@ def solution(genres, plays):
         albums = _sorted(chart[name])
         answer.append(albums[0][0])
         if len(albums) > 1:
-            answer.append(albums[0][0])
+            answer.append(albums[1][0])
 
     return answer
