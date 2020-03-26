@@ -54,6 +54,9 @@ def solution(board):
     return (left - 1)**2
 """
 
+"""
+>>> chain 사용 전
+
 from itertools import product
 
 def solution(board):
@@ -73,3 +76,15 @@ def solution(board):
                 result = board[r][c]
 
     return result ** 2
+"""
+
+from itertools import product, chain
+
+def solution(board):
+    R, C = len(board), len(board[0])
+    
+    for r, c in product(range(1, R), range(1, C)):
+        if board[r][c]:
+            board[r][c] += min([board[rr][cc] for rr, cc in product([r - 1, r], [c - 1, c])][:-1])
+
+    return max(chain(*board)) ** 2
