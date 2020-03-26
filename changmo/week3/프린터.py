@@ -1,17 +1,17 @@
+PRIOR, LOC = 0, 1
 def solution(priorities, location):
     N = len(priorities)
-    order = list(range(N))
+    printer = list(zip(priorities, range(N)))
     
     answer = 0
     while True:
-        top_pri_loc = priorities.index(max(priorities))
+        top_prior_loc = printer.index(max(printer, key=lambda x: x[PRIOR]))
         
         answer += 1
         
-        doc_order = order[top_pri_loc]
+        doc_order = printer[top_prior_loc][LOC]
         
-        if location == doc_order:
+        if doc_order == location:
             return answer
 
-        priorities = priorities[top_pri_loc + 1:] + priorities[:top_pri_loc]
-        order = order[top_pri_loc + 1:] + order[:top_pri_loc]
+        printer = printer[top_prior_loc + 1:] + printer[:top_prior_loc]
