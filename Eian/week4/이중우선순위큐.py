@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from heapq import heapify, heappop, heappush
+import heapq
 
 def solution(operations):
     queue = []
@@ -8,15 +8,15 @@ def solution(operations):
     for operation in operations:
         cmd, num = operation.split(" ")
         if cmd == "I":
-            heappush(queue, int(num))
+            heapq.heappush(queue, int(num))
         elif queue:
             if num == "1":
                 queue.pop()
             if num == "-1":
-                heappop(queue)
+                heapq.heappop(queue)
     if queue:
         answer.append(max(queue))
-        answer.append(heappop(queue))
+        answer.append(heapq.heappop(queue))
     return answer if answer else [0, 0]
     
 
