@@ -2,8 +2,8 @@
 
 
 def solution(n, results):
-    win = {i: set() for i in range(1, n+1)
-    lose = {i: set() for i in range(1, n+1)
+    win = {i: set() for i in range(1, n+1)}
+    lose = {i: set() for i in range(1, n+1)}
 
     for winner, loser in results:
         win[winner].add(loser)
