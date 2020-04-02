@@ -1,8 +1,7 @@
 def solution(phone_book):
-    cache = set()
+    phone_book = set(phone_book)
     for phone in phone_book:
-        for cached_phone in cache:
-            if cached_phone == phone[:len(cached_phone)] or phone == cached_phone[:len(phone)]:
+        for i in range(1, len(phone)):
+            if phone[:i] in phone_book:
                 return False
-        cache.add(phone)
     return True
