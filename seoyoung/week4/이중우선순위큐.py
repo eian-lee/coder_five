@@ -1,5 +1,6 @@
 from collections import deque
 def solution(operations):
+    MIN = -1
     operations = [(op[0], int(op[2:]))for op in operations]
     que = deque([])
 
@@ -11,8 +12,11 @@ def solution(operations):
                     break
             else:
                 que.append(num)
+                
         elif que:
-            if num == -1: que.popleft()
-            else: que.pop()
+            if num == MIN: 
+                que.popleft()
+            else: 
+                que.pop()
 
     return [que.pop(), que.popleft()] if que else [0, 0]
